@@ -1,6 +1,6 @@
 import Layout from "../../components/Layout"
 import Heading from "../homePage/components/Heading"
-import Text from "../homePage/components/Text"
+
 
 
 function ContactUsPage() {
