@@ -4,9 +4,12 @@ import Nav from "../nav/Nav"
 import MobileNav from "../nav/MobileNav";
 import { Link } from "react-router-dom";
 
+type TPropsType = {
+    activeMenu : boolean,
+    onToggelMenu : React.Dispatch<React.SetStateAction<boolean>>
+}
 
-
-const HambergerIcon = ({activeMenu,onToggelMenu}) =>{
+const HambergerIcon = ({activeMenu,onToggelMenu} : TPropsType) =>{
     
     return (
         <i className={`bi bi-list text-3xl ${activeMenu ? "md:inline-block" : "md:hidden"} cursor-pointer`}
@@ -15,7 +18,7 @@ const HambergerIcon = ({activeMenu,onToggelMenu}) =>{
     )
 }
 
-const CloseIcon = ({activeMenu,onToggelMenu}) =>{
+const CloseIcon = ({activeMenu,onToggelMenu} : TPropsType) =>{
     
     return (
         <i className={`bi bi-x-lg text-3xl ${activeMenu ? "md:hidden" : "md:inline-block"} cursor-pointer`}
@@ -26,7 +29,7 @@ const CloseIcon = ({activeMenu,onToggelMenu}) =>{
 
 
 function Header() {
-    const [toggleMobileMenu,setToggleMobileMenu] = useState(false)
+    const [toggleMobileMenu,setToggleMobileMenu] = useState<boolean>(false)
 
   return (
    <header className={`bg-primary text-white z-20 fixed top-0 w-full`}>
